@@ -1,38 +1,161 @@
 .App {
+  width: 100%;
+  height: 100%;
+  background-image: url('./img/background.png');
+  background-repeat: no-repeat;
+  background-size:  100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main {
+  width: 464px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header-card{
+  display:flex;
+  justify-content: space-between;
+  position: relative;
+  top: 42px;
+}
+.quiz-card{
+  width: 464px;
+  height: 515px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+}
+.results{
+  display: grid;
+  grid-template-rows: 50% 10% 20% 20%; 
+}
+.results > div {
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.tryAgain-button:hover{
+  background: #F9A826;
+  color: #FFFFFF;
+}
+.tryAgain-button {
+  width: 209px;
+  height: 62px;
+
+  border: 2px solid #1D355D;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background: #FFFFFF;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+
+
+  color: #1D355D;
+}
+.question-component{
+  width: 400px;
+  display: grid;
+  grid-template-rows: 30% 55% 15%;
+
+}
+.flag-img{
+  width: 84px;
+  height: 54px;
+
+  filter: drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.1));
+  border-radius: 4px;
+}
+.question-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.question{
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  /* identical to box height */
+  color: #2F527B;
+}
+.answer-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.answer-button:hover {
+  background: #F9A826;
+}
+.answer-button:hover > div {
+  color: #FFFFFF;
+}
+.answer-button {
+  width: 400px;
+  height: 56px;
+  background: #FFFFFF;
+  border: 2px solid rgba(96, 102, 208, 0.7);
+  box-sizing: border-box;
+  border-radius: 12px;
+  display:grid;
+  grid-template-columns: 20% 60% 20%;
+}
+
+.answer-button > div {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+  text-align: center;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+  color: rgba(96, 102, 208, 0.8);
+}
+
+.next-button-container{
+  text-align: right;
+}
+
+.next-button{
+  width: 116px;
+  height: 56px;
+  border: none;
+  background: #F9A826;
+  box-shadow: 0px 2px 4px rgba(252, 168, 47, 0.4);
+  border-radius: 12px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+  color: #FFFFFF;
+}
+
+.footer{
+  color: #FFFFFF;
 }
