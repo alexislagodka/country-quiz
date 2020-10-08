@@ -1,6 +1,8 @@
 html, body, #root, #app {
   height: 100%;
   width: 100%;
+  min-width: 500px;
+  min-height: 700px;
   background-color: #1E213A;
 }
 
@@ -51,7 +53,7 @@ h4{
   font-size: 25px;
   font-weight: bold;
  }
- 
+
 p{
   font-family: Poppins;
   font-style: normal;
