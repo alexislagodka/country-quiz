@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import quizimg from './img/quiz.svg';
-import win from './img/win.svg';
+import Results from './Results';
 import Question from './Question';
 
 
@@ -29,16 +29,7 @@ class App extends React.Component {
         </div>
         <div className="quiz-card">
           { this.state.lose ?
-          <div className="results">
-            <div><img className="results-img" src={win} alt="win"/></div>
-            <div><h3>Results</h3></div>
-            <div>You got <h4>&nbsp;{this.state.counter}&nbsp;</h4>correct answers</div>
-            <div>
-              <button 
-                className="tryAgain-button" 
-                onClick={()=> this.setState({counter: 0, lose: false, key:0})}>Try again</button>
-            </div>
-          </div>
+          <Results counter={this.state.counter} reset={()=> this.setState({counter: 0, lose: false, key:0})}/>
           :
           <Question 
             key={this.state.key}
