@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import quizimg from './img/quiz.svg';
 import win from './img/win.svg';
