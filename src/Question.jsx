@@ -97,7 +97,7 @@ class Question extends React.Component {
                 this.setState({
                     lose: true
                 })
-                
+
             }
 
             this.setState({
@@ -114,8 +114,8 @@ class Question extends React.Component {
             <div className="answer-container" id="answer-container">
             {this.state.answers.map( (answer, index) => (
                     <button disabled={this.state.disable} key={index}  className="answer-button" id={answer} value={answer} onClick={() => this.handleClickAnswer(answer)}>
-                                <div value={answer}>{this.letter[index]}</div>
-                                <div value={answer}>{answer}</div>
+                                <div value={answer} className="letter">{this.letter[index]}</div>
+                                <div value={answer} className="answer">{answer}</div>
                                 <div value={answer} className="icon"></div>
                     </button>
             ))}
