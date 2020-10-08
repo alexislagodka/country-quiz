@@ -48,7 +48,7 @@ class Question extends React.Component {
         if (typeOfQuestion === 0){
             question = <div className="question-container">
                 <img className="flag-img" src={flag} alt="flag"/>
-                <div className="question">Wich counry does this flag belong to ? </div>
+                <div className="question">Wich country does this flag belong to ? </div>
             </div>
         } else {
             question = <div className="question-container">
