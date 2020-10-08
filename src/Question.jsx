@@ -19,11 +19,10 @@ class Question extends React.Component {
     componentWillMount() {
         const random = Math.floor(Math.random() * this.region.length);
         const region = this.region[random];
-        console.log(this.region[random]);
+        
         fetch(`https://restcountries.eu/rest/v2/region/${region}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             this.setState({
             data : data
             });
@@ -60,17 +59,14 @@ class Question extends React.Component {
         for (var n=0;n<=2;n++){
             const random = Math.floor(Math.random() * this.state.data.length);
             const country = this.state.data[random].name;
-            console.log(`Push ${country}`);
             answers.push(country); 
         }
         function shuffle(array) {
             array.sort(() => Math.random() - 0.5);
           }
 
-        console.log(answers);
         shuffle(answers);
-        console.log(answers);
-        
+       
         this.setState({
             question : question,
             answer : answer,
@@ -85,15 +81,15 @@ class Question extends React.Component {
         checkImg.src = check;
        
         if (this.state.disable === false){
-            console.log(answer);
+          
             if (answer === this.state.answer) {
-                console.log("Win")
+
                 document.getElementById(this.state.answer).style.background = "#60BF88";
                 document.getElementById(this.state.answer).children[2].appendChild(checkImg);
                 this.props.addScore();
+
             } else {
-                console.log("Lose");
-                console.log(answer);
+
                 document.getElementById(this.state.answer).style.background = "#60BF88";
                 document.getElementById(this.state.answer).children[2].appendChild(checkImg);
                 document.getElementById(answer).style.background = "#EA8282";
@@ -101,6 +97,7 @@ class Question extends React.Component {
                 this.setState({
                     lose: true
                 })
+                
             }
 
             this.setState({

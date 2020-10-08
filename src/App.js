@@ -14,15 +14,10 @@ class App extends React.Component {
   }
   
   handleNext = (lose) => {
-    console.log("Next");
-    console.log(lose);
-    
       this.setState({
         key: Math.floor(Math.random() * Math.floor(1000)),
         lose:lose
       })
-    
-    
   }
 
   render(){
