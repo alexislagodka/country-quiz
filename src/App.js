@@ -15,7 +15,7 @@ class App extends React.Component {
   
   handleNext = (lose) => {
       this.setState({
-        key: Math.floor(Math.random() * Math.floor(1000)),
+        key: this.state.key + 1,
         lose:lose
       })
   }
