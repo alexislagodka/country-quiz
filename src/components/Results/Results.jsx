@@ -1,5 +1,5 @@
 import React from 'react';
-import win from './img/win.svg';
+import win from '../../img/win.svg';
 
 class Results extends React.Component {
 

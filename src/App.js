@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import quizimg from './img/quiz.svg';
-import Results from './Results';
-import Question from './Question';
+import quizimg from '../src/img/quiz.svg';
+import Results from '../src/components/Results/Results';
+import Question from '../src/components/Question/Question';
 
 
 class App extends React.Component {
@@ -16,7 +16,7 @@ class App extends React.Component {
   handleNext = (lose) => {
       this.setState({
         key: this.state.key + 1,
-        lose:lose
+        lose: lose
       })
   }
 

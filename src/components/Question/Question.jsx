@@ -1,11 +1,10 @@
 import React from 'react';
-import check from './img/check.svg';
-import cross from './img/cross.svg';
+import check from '../../img/check.svg';
+import cross from '../../img/cross.svg';
 
 class Question extends React.Component {
-
-    region = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
-    letter = ["A", "B", "C", "D"];
+    regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
+    letters = ["A", "B", "C", "D"];
     state = {
         data : [],
         question : "",
@@ -17,8 +16,8 @@ class Question extends React.Component {
         lose :false
     }
     componentWillMount() {
-        const random = Math.floor(Math.random() * this.region.length);
-        const region = this.region[random];
+        const random = Math.floor(Math.random() * this.regions.length);
+        const region = this.regions[random];
         
         fetch(`https://restcountries.eu/rest/v2/region/${region}`)
         .then(res => res.json())
@@ -106,15 +105,15 @@ class Question extends React.Component {
             })
         }
       }
+
     render(){
-        
         return <div className="question-component"> 
             {this.state.question}
             
             <div className="answer-container" id="answer-container">
             {this.state.answers.map( (answer, index) => (
                     <button disabled={this.state.disable} key={index}  className="answer-button" id={answer} value={answer} onClick={() => this.handleClickAnswer(answer)}>
-                                <div value={answer} className="letter">{this.letter[index]}</div>
+                                <div value={answer} className="letter">{this.letters[index]}</div>
                                 <div value={answer} className="answer">{answer}</div>
                                 <div value={answer} className="icon"></div>
                     </button>
