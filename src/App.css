@@ -8,6 +8,7 @@
 }
 
 .card {
+  padding: 10px;
   max-width: 464px;
   display: flex;
   flex-direction: column;
@@ -181,7 +182,7 @@
 }
 
 .footer{
-  position: fixed;
+  position: absolute;
   bottom: 0;
   color: #FFFFFF;
 }
