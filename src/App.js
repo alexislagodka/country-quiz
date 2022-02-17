@@ -4,7 +4,6 @@ import quizimg from '../src/img/quiz.svg';
 import Results from '../src/components/Results/Results';
 import Question from '../src/components/Question/Question';
 
-
 class App extends React.Component {
   
   state = {
@@ -21,8 +20,9 @@ class App extends React.Component {
   }
 
   render(){
+
     return <div className="App">
-      <div className="main">
+      <div className="card">
         <div className ="header-card">
           <h1>COUNTRY QUIZ</h1>
           <img className="quiz-img" src={quizimg} alt="quizimg"></img>
