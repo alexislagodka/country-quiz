@@ -19,7 +19,7 @@ class Question extends React.Component {
         const random = Math.floor(Math.random() * this.regions.length);
         const region = this.regions[random];
         
-        fetch(`https://restcountries.eu/rest/v2/region/${region}`)
+        fetch(`https://restcountries.com/v3.1/region/${region}`)
         .then(res => res.json())
         .then(data => {
             this.setState({
@@ -36,13 +36,13 @@ class Question extends React.Component {
         const typeOfQuestion = Math.round(Math.random()); // Output 0: capital question or 1: flag question
         const random = Math.floor(Math.random() * this.state.data.length);
         
-        const country = this.state.data[random].name;
-        const flag = this.state.data[random].flag;
+        const country = this.state.data[random].name.official;
+        const flag = this.state.data[random].flags.svg;
         const capital = this.state.data[random].capital;
         const answer = country;
 
-        var question;
-        var answers = [country];
+        let question;
+        let answers = [country];
 
         if (typeOfQuestion === 0){
             question = <div className="question-container">
@@ -57,7 +57,7 @@ class Question extends React.Component {
 
         for (var n=0;n<=2;n++){
             const random = Math.floor(Math.random() * this.state.data.length);
-            const country = this.state.data[random].name;
+            const country = this.state.data[random].name.official;
             answers.push(country); 
         }
         function shuffle(array) {
