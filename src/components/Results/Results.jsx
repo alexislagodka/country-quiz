@@ -1,7 +1,16 @@
 import React from 'react';
 import win from '../../img/win.svg';
+import confetti from 'canvas-confetti';
 
 class Results extends React.Component {
+
+  componentDidMount(){
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  }
 
     render(){
         const {counter} = this.props;
